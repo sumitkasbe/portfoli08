@@ -136,7 +136,7 @@ export const Hero = () => {
 
               <AnimatedBorderButton
                 href={profile.resumePath}
-                download="Sumit_Kasbe_Resume.html"
+                download="Sumit_Kasbe_Resume.pdf"
               >
                 <Download className="w-5 h-5" />
                 Download Resume
