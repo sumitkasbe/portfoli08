@@ -135,7 +135,7 @@ export const Hero = () => {
               </Button>
 
               <AnimatedBorderButton
-                href={`${import.meta.env.BASE_URL}Sumit_Kasbe_Resume.pdf`}
+                href={profile.resumePath}
                 download="Sumit_Kasbe_Resume.pdf"
               >
                 <Download className="w-5 h-5" />

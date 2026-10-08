@@ -1,6 +1,7 @@
 export const AnimatedBorderButton = ({
   children,
   href,
+  download,
   className = "",
   ...props
 }) => {
@@ -40,9 +41,7 @@ export const AnimatedBorderButton = ({
 
   if (href) {
     return (
-      <a href={href} className={classes} {...props}>
-        {content}
-      </a>
+      <a href={href} download={download} className={classes} {...props}></a>
     );
   }
 
