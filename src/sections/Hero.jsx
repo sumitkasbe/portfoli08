@@ -135,7 +135,7 @@ export const Hero = () => {
               </Button>
 
               <AnimatedBorderButton
-                href={profile.resumePath}
+                href={`${import.meta.env.BASE_URL}Sumit_Kasbe_Resume.pdf`}
                 download="Sumit_Kasbe_Resume.pdf"
               >
                 <Download className="w-5 h-5" />
@@ -287,17 +287,15 @@ export const Hero = () => {
       </div>
 
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20">
-  <a
-    href="#about"
-    className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group cursor-pointer"
-  >
-    <span className="text-xs uppercase tracking-[0.2em]">
-      Scroll
-    </span>
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group cursor-pointer"
+        >
+          <span className="text-xs uppercase tracking-[0.2em]">Scroll</span>
 
-    <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-primary" />
-  </a>
-</div>
+          <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-primary" />
+        </a>
+      </div>
     </section>
   );
 };
