@@ -139,7 +139,7 @@ export const Hero = () => {
                 download="Sumit_Kasbe_Resume.pdf"
               >
                 <Download className="w-5 h-5" />
-                Download Resume
+                <span>Download Resume</span>
               </AnimatedBorderButton>
             </div>
 
