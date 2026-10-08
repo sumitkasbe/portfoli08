@@ -31,7 +31,7 @@ export const profile = {
   phoneHref: "tel:+916355949869",
   github: "https://github.com/sumitkasbe",
   linkedin: "https://www.linkedin.com/in/sumit-kasbe-604b35371",
-  resumePath: "/Sumit_Kasbe_Resume.html",
+  resumePath: `${import.meta.env.VITE_BASE_URL}/Sumit_Kasbe_Resume.html`,
 };
 
 export const navLinks = [
