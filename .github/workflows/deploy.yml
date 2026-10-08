@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
 permissions:
@@ -13,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -40,14 +39,22 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Diagnostic: show exactly what will be deployed
+      - name: Check build output
+        run: |
+          echo "===== DIST FILES ====="
+          find dist -maxdepth 2 -type f
+          echo "===== DIST INDEX ====="
+          cat dist/index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "./dist"
+          path: ./dist
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 
+        uses: actions/deploy-pages@v4
