@@ -7,12 +7,14 @@ import { Projects } from "@/sections/Projects";
 import { Education } from "@/sections/Education";
 import { Contact } from "@/sections/Contact";
 import { Footer } from "./layout/Footer";
+import { StarBackground } from "@/components/StarBackground";
 
 function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <StarBackground />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Skills />

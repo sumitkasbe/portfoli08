@@ -1,4 +1,5 @@
-import { navLinks, profile } from "@/data/portfolio";
+import { profile } from "@/data/portfolio";
+import { ArrowUp } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const socialLinks = [
@@ -10,45 +11,32 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="text-center md:text-left">
-            <a href="#home" className="text-xl font-bold tracking-tight">
-              {profile.initials}
-              <span className="text-primary">.</span>
+    <footer className="py-8 px-4 bg-card relative border-t border-border mt-12">
+      <div className="container flex flex-wrap justify-between items-center gap-4">
+        <p className="text-sm text-muted-foreground">
+          &copy; {currentYear} {profile.name}. All rights reserved.
+        </p>
+
+        <div className="flex items-center gap-3">
+          {socialLinks.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              aria-label={social.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
+            >
+              <social.icon className="w-4 h-4" />
             </a>
-            <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} {profile.name}. All rights reserved.
-            </p>
-          </div>
-
-          <nav className="flex flex-wrap justify-center gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
-              >
-                <social.icon className="w-5 h-5" />
-              </a>
-            ))}
-          </div>
+          ))}
+          <a
+            href="#home"
+            aria-label="Back to top"
+            className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
+          >
+            <ArrowUp size={20} />
+          </a>
         </div>
       </div>
     </footer>
